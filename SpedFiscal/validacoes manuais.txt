@@ -1,0 +1,21 @@
+/* validacoes manuais */
+
+/* validar CNPJ */
+if (!F_CNPJ.Equals(""))
+	if (!Utils.ValidaCNPJ(F_CNPJ))
+		return "Erro -> CNPJ Inválido";
+
+/* validar CPF */
+if (!F_CPF.Equals(""))
+	if (!Utils.ValidaCPF(F_CPF))
+		return "Erro -> CPF Inválido";
+		
+		
+/* validar codigo do pais */
+F_COD_PAIS = Utils.ConsultaPais(TpConsulta.PorNome, F_COD_PAIS);
+
+/* validar UF */
+F_UF_ST = Utils.ValidaUF(F_UF_ST);
+
+/* validar IE */
+F_IE_ST = Utils.ValidaInscricaoEstadual(F_IE_ST, F_UF_ST);
